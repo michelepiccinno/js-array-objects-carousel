@@ -1,0 +1,37 @@
+ .my-container {
+   position: relative;
+ }
+
+ .btn-prev,
+ .btn-next {
+ width: 250px;
+ height: 5rem;
+ }
+
+ .btn-prev {
+   position: absolute;
+   top: -1px;
+   right: -1px;
+   background-color: transparent;
+ }
+
+ .btn-next {
+   position: absolute;
+   bottom: -1px;
+   right: -1px;
+   background-color: transparent;
+ }
+
+ .carousel-inner {
+width: calc(100% - 250px); 
+}
+
+.aside-container {
+  position: absolute;
+  right: 1px;
+  top: 0;
+  min-height: 100%;
+  border: 1px solid black;
+  width: 250px;
+}
+
