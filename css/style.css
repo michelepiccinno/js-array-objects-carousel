@@ -33,5 +33,15 @@ width: calc(100% - 250px);
   min-height: 100%;
   border: 1px solid black;
   width: 250px;
+  background-color: azure;
 }
 
+.carousel-item {
+height: 500px;
+}
+
+img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  max-width: 100%;
+}
