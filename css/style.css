@@ -45,3 +45,22 @@ img {
   object-fit: cover;
   max-width: 100%;
 }
+
+.fa-chevron-up,
+.fa-chevron-down {
+  border-radius: 50%;
+  padding: 5px;
+  aspect-ratio: 1/1;
+  line-height: initial;
+  background-color: #cccccc;
+}
+
+.carousel-indicators {
+  padding-right: 250px;
+}
+
+.mini-box-card {
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc(100% / 5);
+}
