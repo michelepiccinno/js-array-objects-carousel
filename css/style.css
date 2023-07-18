@@ -60,7 +60,7 @@
    padding-right: 250px;
  }
 
- .mini-box-card {
+ .mini-box-card {  
    display: flex;
    flex-direction: column;
  }
@@ -70,7 +70,13 @@
   flex-grow: 1;*/
    object-fit: cover;
    height: 100px;
+   box-sizing: border-box;
+   transition: border-color 0.3s;
  }
+
+ .mini-box-card img:hover {
+  border: 5px solid lightgrey;
+}
 
  .box-text-main {
    position: absolute;
@@ -79,3 +85,5 @@
    text-align: right;
    color: white;
  }
+
+

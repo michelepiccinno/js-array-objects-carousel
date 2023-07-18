@@ -31,27 +31,61 @@ for (let i = 0; i < images.length; i++) {
   console.log(`${singleElement.title}`);
   console.log(`${singleElement.text}`);
 
-  //RICHIAMO CONTAINER-PADRE[i]
+  //RICHIAMO CONTAINERS-PADRE[i]
   let bigImgContainer = document.querySelectorAll(".carousel-item")[i];
-  //CREO ELEMENTO HTML IMG, ASSEGNO LA CLASSE, INSERISCO CONTENUTO E APPENDO AL CONTAINER
-  let myNewImg = document.createElement("img");
-  myNewImg.classList.add("big-img");
-  myNewImg.src = singleElement.image;
-  bigImgContainer.appendChild(myNewImg);
-
-  //RICHIAMO CONTAINER-PADRE[i]
   let bigTxtContainer = document.querySelectorAll(".box-text-main")[i];
-  //CREO ELEMENTO HTML H3, ASSEGNO LA CLASSE, INSERISCO CONTENUTO E APPENDO AL CONTAINER
-  let myNewTitle = document.createElement("h3");
-  myNewTitle.classList.add("title-img");
-  myNewTitle.innerHTML = singleElement.title;
-  bigTxtContainer.appendChild(myNewTitle);
+
+
+  //INVOCO LE FUNZIONI DI CREAZIONE DEGLI ELEMENTI DEL DOM
+  createBigImgElements(images[i].image, bigImgContainer);
+  createTitleElements(images[i].title, bigTxtContainer);
+
+
+/*-----DA TERMINARE CREAZIONIE FUNCTION-----------*/
 
   //RICHIAMO CONTAINER-PADRE[i]
   let bigDescrContainer = document.querySelectorAll(".box-text-main")[i];
   //CREO ELEMENTO HTML H3, ASSEGNO LA CLASSE, INSERISCO CONTENUTO E APPENDO AL CONTAINER
   let myNewDescr = document.createElement("h6");
-  myNewDescr.classList.add("title-img");
+  myNewDescr.classList.add("descr-img");
   myNewDescr.innerHTML = singleElement.text;
   bigDescrContainer.appendChild(myNewDescr);
+
+  //RICHIAMO CONTAINER-PADRE[i] (del del menu img laterale)
+  let littleImgContainer = document.querySelectorAll(".mini-box-card")[i];
+  //CREO ELEMENTO HTML IMG, INSERISCO CONTENUTO E APPENDO AL CONTAINER
+  let myNewLittleImg = document.createElement("img");
+  myNewLittleImg.classList.add("little-img");
+  myNewLittleImg.src = singleElement.image;
+  myNewLittleImg.dataset.bsSlideTo = i;
+  littleImgContainer.appendChild(myNewLittleImg);
 }
+
+
+/**Riceve un in input un un oggetto rispondente al ciclo [i]
+ * di un array e crea l'elemento HTML con classe .img-big
+ * 
+ * @param {object} singleArrayElement  
+ */
+
+  //CREO ELEMENTO HTML IMG, ASSEGNO LA CLASSE, INSERISCO CONTENUTO E APPENDO AL CONTAINER
+  function createBigImgElements(singleArrayElement, imgContainer) {
+  let myNewImg = document.createElement("img");
+  myNewImg.classList.add("big-img");
+  myNewImg.src = singleArrayElement;
+  imgContainer.appendChild(myNewImg);
+}
+
+
+/**Riceve un in input un un oggetto rispondente al ciclo [i]
+ * di un array e crea l'elemento HTML con classe .title-big
+ * 
+ * @param {object} singleArrayElement  
+ */
+  //CREO ELEMENTO HTML H3, ASSEGNO LA CLASSE, INSERISCO CONTENUTO E APPENDO AL CONTAINER
+  function createTitleElements(singleArrayElement, titleContainer) {
+  let myNewTitle = document.createElement("h3");
+  myNewTitle.classList.add("title-img");
+  myNewTitle.innerHTML = singleArrayElement;
+  titleContainer.appendChild(myNewTitle);
+  }
